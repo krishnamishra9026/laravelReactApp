@@ -105,7 +105,7 @@ class ChatContainer extends Component {
                             <div className="ms-chat-body">
                               <div className="tab-content">
                                 <div role="tabpanel" className="tab-pane active show fade in" id="chats-2">
-                                  <ul className="ms-scrollable">
+                                  <ul className="ms-scrollable" style={{ maxHeight:'61vh'}}>
                                     <FriendList />             
                                   </ul>
                                 </div>
