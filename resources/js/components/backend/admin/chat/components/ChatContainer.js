@@ -92,22 +92,11 @@ class ChatContainer extends Component {
                       <div className="ms-panel ms-panel-fh">
                         <div className="ms-panel-body py-3 px-0">
                           <div className="ms-chat-container">
-                            <div className="ms-chat-header px-3">
-                              <div className="ms-chat-user-container media clearfix">
-                                <div className="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                                  <img src="https://via.placeholder.com/270x270" className="ms-img-round" alt="people" />
-                                </div>
-                                <div className="media-body ms-chat-user-info mt-1">
-                                  <UserPanel />
-                                </div>
-                              </div>
-                            </div>
+                            <UserPanel />
                             <div className="ms-chat-body">
                               <div className="tab-content">
-                                <div role="tabpanel" className="tab-pane active show fade in" id="chats-2">
-                                  <ul className="ms-scrollable" style={{ maxHeight:'61vh'}}>
-                                    <FriendList />             
-                                  </ul>
+                                <div role="tabpanel" className="tab-pane active show fade in" id="chats-2">                                  
+                                    <FriendList />
                                 </div>
                               </div>
                             </div>

@@ -28,19 +28,27 @@ class UserPanel extends Component {
               <li className="collection-item"><a href="#" onClick={this.logout}>Logout</a></li>
               </ul>) : '';
         return (
-          <div className="user-panel">
-            <UserAvatar />
-            <div className="user-info">
-              <div className="user-text">
-                <div className="user-name">
-                  {this.props.user.name}
-                </div>
-                <div className="user-email">
-                  {this.props.user.email}
+            <div className="user-panel">
+              <div className="ms-chat-header px-3">
+                <div className="ms-chat-user-container media clearfix">
+                  <div className="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
+                    <UserAvatar user_id={this.props.user.id} />
+                  </div>
+                  <div className="media-body ms-chat-user-info mt-1">
+                    <div className="user-info">
+                      <div className="user-text">
+                        <div className="user-name">
+                          {this.props.user.name}
+                        </div>
+                        <div className="user-email">
+                          {this.props.user.email}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         );
     }
 }

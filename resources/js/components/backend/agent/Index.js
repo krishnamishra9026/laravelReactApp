@@ -9,6 +9,7 @@ import RightSidebar from './layouts/RightSidebar'
 import Home from './Home'
 import Routes from './Routes'
 
+
 class Index extends Component {
 
     constructor(props) {

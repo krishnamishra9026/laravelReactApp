@@ -25,11 +25,15 @@ class FriendsController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(User $user) {
+    public function index(Request $request, User $user) {
 
-      // Fetch friends
-      $friends = User::where('id', "!=", Auth::id())->get();
+        if ($request->has('name') && !empty($request->name)) {
+            $friends = User::join('profiles', 'profiles.user_id', '=', 'users.id')->select('users.*','profiles.avater')->where('users.id', "!=", Auth::id())->where('name', 'LIKE', '%' . $request->name . '%')->get();
+        }else{
 
+            $friends = User::join('profiles', 'profiles.user_id', '=', 'users.id')->select('users.*','profiles.avater')->where('users.id', "!=", Auth::id())->get();
+        }
+  
       return $this->respond($friends);
     }
 

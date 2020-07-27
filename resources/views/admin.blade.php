@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	
 	@include('layouts.back-head')
 </head>
 <body class="ms-body ms-aside-left-open ms-primary-theme ">

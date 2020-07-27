@@ -1,8 +1,13 @@
-import { FETCH_FRIENDS } from './../actions/constants';
+import { FETCH_FRIENDS, FILTER_FRIENDS } from './../actions/constants';
 
-export default function friendsReducer(state = [], action){
+
+const initState = { items: [], filteredItems: [], name: ""};
+
+export default function friendsReducer(state = initState, action){
   switch(action.type) {
-    case FETCH_FRIENDS:
+  	 case FETCH_FRIENDS:
+      return action.payload;
+    case FILTER_FRIENDS:
       return action.payload;
     default:
       return state;

@@ -26,8 +26,8 @@ class Friend extends Component {
         return (
            <div className={classNames} onClick={this.setActiveUser}>
             <li className="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
-              <div className="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
-                <img src="https://via.placeholder.com/270x270" className="ms-img-round" alt="people" />
+              <div className="ms-chat-img mr-3 align-self-center">
+               { (this.props.image === null) ? <img src={'/images/profile.png'} className="ms-img-round" alt="people" /> : <img src={'/uploads/users/'+this.props.id+'/'+this.props.image} className="ms-img-round" alt="people" /> }
               </div>
               <div className="media-body ms-chat-user-info mt-1">
                 <h6>{this.props.name}</h6> 

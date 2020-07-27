@@ -42,7 +42,7 @@ class UserController extends Controller
     function getProfile($id)
     {
         $profile = Profile::all()->where('user_id', $id)->first();
-        $avtar = !empty($profile->avater) ? $profile->avater : '/profile.jpg';
+        $avtar = !empty($profile->avater) ? $profile->avater : 'profile.png';
         return response()->json($avtar);
     }
 

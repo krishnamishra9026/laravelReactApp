@@ -4,7 +4,8 @@ import {
   SET_ACTIVE_USER_ID,
   FETCH_LAST_MESSAGE_WITH,
   FETCH_LAST_MESSAGES,
-  CACHE_CONVERSATION_WITH
+  CACHE_CONVERSATION_WITH,
+  SET_ACTIVE_USER_PROFILE
 } from './constants';
 
 export const fetchConversationWith = (id, force = false) => (dispatch, getState) =>
@@ -91,6 +92,14 @@ export const setActiveUserId = id => (dispatch, getState) => {
     type: SET_ACTIVE_USER_ID,
     payload: id
   });
+
+  axios.get('/api/users/getprofile/'+id).then(response => {
+    dispatch({
+      type: SET_ACTIVE_USER_PROFILE,
+      payload: response.data
+    });
+  })
+
 
   return Promise.resolve();
 }
